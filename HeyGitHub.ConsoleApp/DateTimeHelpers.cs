@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+﻿//using System.Globalization;
 
 namespace HeyGitHub.ConsoleApp
 {
@@ -6,10 +6,10 @@ namespace HeyGitHub.ConsoleApp
     {
         public string GetPersianDayOfWeekName(DateTime dateTime)
         {
-            var persianCalendar = new PersianCalendar();
-            var dayOfWeek = persianCalendar.GetDayOfWeek(dateTime);
+            //var persianCalendar = new PersianCalendar();
+            //var dayOfWeek = persianCalendar.GetDayOfWeek(dateTime);
             var dayOfWeekName = "";
-            switch (dayOfWeek)
+            switch (dateTime.DayOfWeek)
             {
                 case DayOfWeek.Sunday:
                     dayOfWeekName = "1shanbe";
@@ -34,6 +34,36 @@ namespace HeyGitHub.ConsoleApp
                     break;
             }
             return dayOfWeekName;
+        }
+
+        public System.ConsoleColor GetDayOfWeekColor(DateTime dateTime)
+        {
+            System.ConsoleColor dayOfWeekColor = ConsoleColor.White;
+            switch (dateTime.DayOfWeek)
+            {
+                case DayOfWeek.Sunday:
+                    dayOfWeekColor = ConsoleColor.Green;
+                    break;
+                case DayOfWeek.Monday:
+                    dayOfWeekColor = ConsoleColor.Green;
+                    break;
+                case DayOfWeek.Tuesday:
+                    dayOfWeekColor = ConsoleColor.Green;
+                    break;
+                case DayOfWeek.Wednesday:
+                    dayOfWeekColor = ConsoleColor.Green;
+                    break;
+                case DayOfWeek.Thursday:
+                    dayOfWeekColor = ConsoleColor.Yellow;
+                    break;
+                case DayOfWeek.Friday:
+                    dayOfWeekColor = ConsoleColor.Red;
+                    break;
+                case DayOfWeek.Saturday:
+                    dayOfWeekColor = ConsoleColor.Green;
+                    break;
+            }
+            return dayOfWeekColor;
         }
     }
 }
